@@ -1,4 +1,5 @@
 import 'package:expense_tracker/core/widgets/text_form_field.dart';
+import 'package:expense_tracker/features/add_transaction/presentation/screens/add_transaction_screen.dart';
 import 'package:expense_tracker/features/forgetpassword/presentation/cubit/cubit.dart';
 import 'package:expense_tracker/features/forgetpassword/presentation/screens/forgetpassword_screen.dart';
 import 'package:expense_tracker/features/home/presentation/screens/home_screen.dart';
@@ -96,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     );
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                      MaterialPageRoute(builder: (context) => AddTransactionScreen()),
                     );
                   }
                   if (state is LoginFailer) {

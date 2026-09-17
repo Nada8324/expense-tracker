@@ -121,15 +121,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     CustomTextFormField(
                       controller: genderController,
-                      hintText: 'enter 0 if you are male andd enter 1 if',
+                      hintText: 'enter gender type',
                       labelText: 'Gender',
                       keyboardType: .name,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "please enter your name";
-                        }
-                        if (value != '0' && value != '1') {
-                          return "value must be 0 or 1";
                         }
                         return null;
                       },
@@ -176,6 +173,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         context.read<RegisterCubit>().signUp(
                           email: emailController.text,
                           password: passwordController.text,
+                          name: nameController.text,
+                          phone: phoneController.text,
+                          gender: genderController.text,
                         );
                       }
                     },

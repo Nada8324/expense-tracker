@@ -42,12 +42,12 @@ class CustomTextFormField extends StatelessWidget {
           labelText: labelText,
           labelStyle: TextStyle(color: Colors.grey.shade700, fontSize: 18.sp),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.r),
-            borderSide: .none,
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(color: Color(0xff26265C), width: 1),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.r),
-            borderSide: BorderSide(color: Colors.grey, width: 3.w),
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(color: Color(0xff26265C), width: 1),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.r),

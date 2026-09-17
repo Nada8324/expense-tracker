@@ -5,10 +5,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class RegisterCubit extends Cubit<RegisterStates> {
   RegisterCubit() : super(RegisterInitial());
   final FirebaseDatasource datasource = FirebaseDatasource();
-  Future<void> signUp({required String email, required String password}) async {
+  Future<void> signUp({
+    required String email,
+    required String password,
+    required String name,
+    required String phone,
+    required String gender,
+  }) async {
     emit(RegisterLoading());
     try {
-      final user = await datasource.signUp(email: email, password: password);
+      final user = await datasource.signUp(
+        email: email,
+        password: password,
+        name: name,
+        phone: phone,
+        gender: gender,
+      );
       if (user != null) {
         emit(RegisterSuccess());
       } else {

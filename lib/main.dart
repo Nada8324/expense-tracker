@@ -1,4 +1,5 @@
 import 'package:expense_tracker/core/data%20source/firebase_datasource.dart';
+import 'package:expense_tracker/features/add_transaction/presentation/screens/add_transaction_screen.dart';
 import 'package:expense_tracker/features/home/presentation/screens/home_screen.dart';
 import 'package:expense_tracker/features/onBording/onboarding_screen.dart';
 import 'package:expense_tracker/firebase_options.dart';
@@ -10,8 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  FirebaseDatasource datasource = FirebaseDatasource();
-  datasource.logOut();
+ 
   final user = FirebaseAuth.instance.currentUser;
   runApp(MyApp(isloggedIn: user != null ? true : false));
 }
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       designSize: Size(360, 800),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: isloggedIn ? HomeScreen() : OnboardingScreen(),
+        home: isloggedIn ? AddTransactionScreen() : OnboardingScreen(),
       ),
     );
   }
